@@ -32,7 +32,7 @@ public class Enfermeiro extends Funcionario{
     }
 
     public void finalizarAtendimento(Paciente paciente){
-        // SEM LOGICA
+
     }
 
     public void encaminharParaMedico(Paciente paciente){

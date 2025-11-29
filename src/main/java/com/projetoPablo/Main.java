@@ -18,7 +18,7 @@ public class Main {
         enfermeiro.autenticar("123", "123");
         enfermeiro.triarPaciente(p1, Prioridade.VERMELHA);
 
-        upa1.adicionarPacienteFila(p1);
+         upa1.adicionarPacienteFila(p1);
 
     }
 }

@@ -78,7 +78,6 @@ public class UPA {
         // SEM LOGICA
     }
 
-
     public Paciente chamarProximo(Prioridade prioridade) {
         return null; // SEM LOGICA
     }
@@ -88,11 +87,65 @@ public class UPA {
     }
 
     public boolean removerPaciente(Paciente paciente) {
-        return false; // SEM LOGICA
+        if (paciente == null) {
+            return false;
+        }
+
+        boolean removido = false;
+
+        // Comparar usando CPF em cada fila
+        if (filaVerde != null) {
+            for (int i = 0; i < filaVerde.size(); i++) {
+                if (filaVerde.get(i).getCpf().equals(paciente.getCpf())) {
+                    filaVerde.remove(i);
+                    removido = true;
+
+                    System.out.println("======================================================================");
+                    System.out.println("🎉 O paciente " + paciente.getNome() + " teve alta! 🏥");
+                    System.out.println("📃 Status: Recebeu alta médica e foi removido da fila VERDE.");
+                    System.out.println("======================================================================");
+
+                    break;
+                }
+            }
+        }
+
+        if (!removido && filaAmarela != null) {
+            for (int i = 0; i < filaAmarela.size(); i++) {
+                if (filaAmarela.get(i).getCpf().equals(paciente.getCpf())) {
+                    filaAmarela.remove(i);
+                    removido = true;
+
+                    System.out.println("======================================================================");
+                    System.out.println("🎉 O paciente " + paciente.getNome() + " teve alta! 🏥");
+                    System.out.println("📃 Status: Recebeu alta médica e foi removido da fila AMARELA.");
+                    System.out.println("======================================================================");
+
+                    break;
+                }
+            }
+        }
+
+        if (!removido && filaVermelha != null) {
+            for (int i = 0; i < filaVermelha.size(); i++) {
+                if (filaVermelha.get(i).getCpf().equals(paciente.getCpf())) {
+                    filaVermelha.remove(i);
+                    removido = true;
+
+                    System.out.println("======================================================================");
+                    System.out.println("🎉 O paciente " + paciente.getNome() + " teve alta! 🚑");
+                    System.out.println("📃 Status: Recebeu alta médica e foi removido da fila VERMELHA.");
+                    System.out.println("======================================================================");
+
+                    break;
+                }
+            }
+        }
+
+        return removido;
     }
 
     public int posicaoNaFila(Paciente paciente) {
         return 0; // SEM LOGICA
     }
-
 }
