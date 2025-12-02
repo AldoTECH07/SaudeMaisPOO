@@ -12,7 +12,11 @@ public class Gestor extends Funcionario{
     }
 
     public void monitorarFilas() {
-        // SEM LOGICA
+        UPA upa = getUpaAlocado();
+        System.out.println("Filas da UPA " + upa.getNome());
+        System.out.println("Verde: " + upa.getFilaVerde().size());
+        System.out.println("Amarela: " + upa.getFilaAmarela().size());
+        System.out.println("Vermelha: " + upa.getFilaVermelha().size());
     }
 
     public void cadastrarFuncionario(Funcionario funcionario) {

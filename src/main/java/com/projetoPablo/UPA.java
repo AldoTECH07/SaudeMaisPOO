@@ -100,9 +100,45 @@ public class UPA {
         //System.out.println("✅ Paciente " + paciente.getNome() + " entrou na fila " + paciente.getPrioridade() + " da UPA " + this.nome);
     }
 
-    public Paciente chamarProximo(Prioridade prioridade) {
-        return null; // SEM LOGICA
+    public Paciente chamarProximo() {
+        Paciente proximo = null;
+        String filaNome = "";
+
+        // Prioridade máxima primeiro
+        if (!filaVermelha.isEmpty()) {
+            proximo = filaVermelha.get(0);
+            filaNome = "VERMELHA 🔴";
+        }
+        else if (!filaAmarela.isEmpty()) {
+            proximo = filaAmarela.get(0);
+            filaNome = "AMARELA 🟡";
+        }
+        else if (!filaVerde.isEmpty()) {
+            proximo = filaVerde.get(0);
+            filaNome = "VERDE 🟢";
+        }
+        else {
+            System.out.println("⚠️ Nenhum paciente na fila no momento.");
+            return null;
+        }
+
+        // Print simples
+        System.out.println("==============================================");
+        System.out.println("🚑 Próximo paciente chamado!");
+        System.out.println("👤 Paciente: " + proximo.getNome());
+        System.out.println("🚨 Prioridade da fila: " + filaNome);
+        System.out.println("🕒 Chegada: " + proximo.getChegadaFilaTimestamp());
+        System.out.println("==============================================");
+
+
+        // REMOVER AQUI, pois foi chamado para atendimento
+        if (filaNome.contains("VERMELHA")) filaVermelha.remove(0);
+        if (filaNome.contains("AMARELA")) filaAmarela.remove(0);
+        if (filaNome.contains("VERDE")) filaVerde.remove(0);
+
+        return proximo;
     }
+
 
     public double getTempoMedioEspera() {
         return 0.0; // SEM LOGICA

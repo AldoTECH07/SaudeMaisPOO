@@ -31,7 +31,7 @@ public class Atendente extends Funcionario {
 
     public void adicionarFila(Paciente paciente, UPA upa) {
         if (paciente == null) {
-            System.out.println("⚠️ Paciente não cadastrado.");
+            System.out.println("⚠️ Paciente inválido.");
             return;
         }
 
@@ -45,12 +45,13 @@ public class Atendente extends Funcionario {
             return;
         }
 
-        // chama a lógica da UPA para inserir na fila correta
+        // ✅ agora chama o método correto da UPA
         upa.adicionarPacienteFila(paciente);
 
-        // print simples do atendente confirmando
-        System.out.println("📞 O Atendente " + getNome() + " adicionou o(a) paciente "
-                + paciente.getNome() + " na fila " + paciente.getPrioridade()
-                + " da UPA " + upa.getNome());
+        System.out.println("📞 O Atendente " + getNome() +
+                " adicionou o(a) paciente " + paciente.getNome() +
+                " na fila " + paciente.getPrioridade() +
+                " da UPA " + upa.getNome());
     }
+
 }
