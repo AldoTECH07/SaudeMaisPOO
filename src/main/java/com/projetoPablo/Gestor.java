@@ -6,10 +6,13 @@ public class Gestor extends Funcionario{
         super(nome, cpf, dataNascimento, matricula, senha, upaAlocado);
     }
 
+
     // MÉTODOS
+    /*
     public void cadastrarUPA(UPA upa) {
         // SEM LOGICA
     }
+     */
 
     public void monitorarFilas() {
         System.out.println("\n======= 📊 MONITORANDO FILAS DE ESPERA =======");
@@ -21,9 +24,11 @@ public class Gestor extends Funcionario{
         System.out.println("=====================================");
     }
 
+    /*
     public void cadastrarFuncionario(Funcionario funcionario) {
         // SEM LOGICA
     }
+     */
 
     public void gerarRelatorioSimples() {
         UPA upa = getUpaAlocado();
