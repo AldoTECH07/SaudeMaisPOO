@@ -84,8 +84,5 @@ public class Main {
         // MEDICO ATENDE -> FINALIZA O ATENDIMENTO
         medico1.atenderPaciente(p1);
         medico1.finalizarAtendimento(p1);
-
-        // GESTOR GERA O RELATORIO
-        gestor.gerarRelatorioSimples();
     }
 }

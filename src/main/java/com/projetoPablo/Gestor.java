@@ -31,13 +31,6 @@ public class Gestor extends Funcionario{
      */
 
     public void gerarRelatorioSimples() {
-        UPA upa = getUpaAlocado();
-
-        System.out.println("\n======= 📊 RELATÓRIO SIMPLES =======");
-        System.out.println("🟢 Pacientes atendidos VERDE: " + upa.getAtendidosVerde());
-        System.out.println("🟡 Pacientes atendidos AMARELA: " + upa.getAtendidosAmarela());
-        System.out.println("🔴 Pacientes atendidos VERMELHA: " + upa.getAtendidosVermelha());
-        System.out.println("=====================================");
-
+        // SEM LOGICA
     }
 }
